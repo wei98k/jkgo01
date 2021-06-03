@@ -31,6 +31,8 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
     
     if err != nil {
         fmt.Fprintf(w, "data is null")
+        //fmt.Printf("original error:%T %v\n", errors.Cause(err), errors.Cause(err))
+        fmt.Printf("stack trce:\n%+v\n", err)
         return
     }
     
