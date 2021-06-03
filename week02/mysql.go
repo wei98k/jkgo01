@@ -16,9 +16,9 @@ func GetOne(db sql.DB,id int) (string, error) {
     if err != nil {
         if err == sql.ErrNoRows {
             //fmt.Println("sql.ErrNoRows")
-            return "", errors.Wrap(err, "data is nil")
+            return "", nil
         }
-        return "", err
+        return "", errors.Wrap(err, "query error")
     } 
     return username, nil 
 }
